@@ -9,6 +9,9 @@ const schema = object({
     .matches(/\d/, 'Password must contain at least one number.')
     .matches(/[!@#$%^&*(),.?":{}|<>]/, 'Password must contain at least one special character.')
     .required('No password provided.'),
+  userType: string()
+    .oneOf(['teacher', 'student'], 'Please select a valid user type')
+    .required('User type is required'),
 })
 
 export default schema
