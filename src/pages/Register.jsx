@@ -1,12 +1,13 @@
 import { Input } from '../components/common/Input.jsx'
 import { Form } from '../components/layouts/Form.jsx'
 import { useFormValidation } from '../hooks/useFormValidation.js'
+import { SelectBox } from '../components/common/SelectBox.jsx'
 
 export const Register = () => {
   const { errors, handleChange, handleBlur, handleSubmit } = useFormValidation({
     email: '',
     password: '',
-    userType: ''
+    userType: '',
   })
 
   const onSubmit = () => {
@@ -33,12 +34,7 @@ export const Register = () => {
         type="password"
       />
 
-      <label htmlFor="userType" className='mr-2'>What are you registering as?</label>
-      <select className='border-r-8 border-transparent outline outline-secondary p-1 px-2 rounded-lg' id="userType" name="userType">
-        <option value="teacher">Teacher</option>
-        <option value="student">Student</option>
-      </select>
-
+      <SelectBox options={[ 'teacher', 'student' ]} label="What are you registering as?" errors={errors.userType}/>
     </Form>
   )
 }
