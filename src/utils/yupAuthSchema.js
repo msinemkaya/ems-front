@@ -1,4 +1,4 @@
-import { object, string } from 'yup'
+import { object, ref, string } from 'yup'
 
 const schema = object({
   email: string().required('You should provide an email.').email('Invalid email format.'),
@@ -12,6 +12,8 @@ const schema = object({
   userType: string()
     .required('User type is required')
     .oneOf([ 'teacher', 'student' ], 'Please select a valid user type'),
+  passwordConfirmation: string()
+    .oneOf([ref('password'), null], 'Passwords must match')
 })
 
 export default schema

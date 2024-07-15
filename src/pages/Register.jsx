@@ -8,6 +8,7 @@ export const Register = () => {
     email: '',
     password: '',
     userType: '',
+    passwordConfirmation: '',
   })
 
   const onSubmit = () => {
@@ -16,7 +17,7 @@ export const Register = () => {
 
   return (
     <Form title="register" onSubmit={(e) => handleSubmit(e, onSubmit)}
-          subtext="start your learning journey by registering in!">
+          subtext="start your learning journey by registering in!" axis='x'>
       <Input
         onChange={handleChange}
         onBlur={handleBlur}
@@ -32,6 +33,15 @@ export const Register = () => {
         name="password"
         label="Password"
         type="password"
+      />
+
+      <Input
+        onChange={handleChange}
+        onBlur={handleBlur}
+        errors={errors.passwordConfirmation}
+        name="passwordConfirmation"
+        label="Password Confirmation"
+        type="passwordConfirmation"
       />
 
       <SelectBox options={[ 'teacher', 'student' ]} label="What are you registering as?" errors={errors.userType}/>
