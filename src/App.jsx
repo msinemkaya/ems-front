@@ -4,7 +4,6 @@ import { Register } from './pages/Register.jsx'
 import { ErrorPage } from './pages/ErrorPage.jsx'
 
 function App() {
-
   return (
     <Routes>
       <Route path="/login" element={<Login/>}/>
