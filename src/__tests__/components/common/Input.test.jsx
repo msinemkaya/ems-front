@@ -27,7 +27,7 @@ describe('Input', () => {
     expect(handleChange).toHaveBeenCalledTimes(1)
   })
 
-  test('applies correct type to input', () => {
+  it('applies correct type to input', () => {
     render(<Input label="foo" name="foo" type="password"/>)
 
     const inputElement = screen.getByLabelText('foo')
