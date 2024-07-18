@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaArrowRightLong } from 'react-icons/fa6'
 
-export const AuthLink = ({text, to}) => {
+export const AuthLink = ({ text, to }) => {
   return (
     <Link
       to={to}

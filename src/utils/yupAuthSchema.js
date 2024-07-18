@@ -13,7 +13,7 @@ const schema = object({
     .required('User type is required')
     .oneOf([ 'teacher', 'student' ], 'Please select a valid user type'),
   passwordConfirmation: string().required('You should provide a confirmation password.')
-    .oneOf([ref('password'), null], 'Passwords must match')
+    .oneOf([ ref('password'), null ], 'Passwords must match'),
 })
 
 export default schema
