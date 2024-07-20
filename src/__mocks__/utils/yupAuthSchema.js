@@ -12,7 +12,7 @@ mockYupAuthSchema.validateAt = jest.fn((path, value) => {
   return Promise.resolve()
 })
 
-mockYupAuthSchema.validate = jest.fn(async (value, options) => {
+mockYupAuthSchema.validate = jest.fn(async (value) => {
   const errors = {}
 
   if ( !value.username ) {
