@@ -9,7 +9,7 @@ export const Form = ({ onSubmit, title, subtext, children, axis = 'y' }) => {
       <div
         className="w-full min-h-svh sm:min-h-0 overflow-auto sm:w-auto sm:px-20 py-12 min-w-96 bg-white rounded-lg sm:border border-primary relative">
         <img src={logo} alt="book" className="w-10 absolute top-2 left-2"/>
-        <form className={`mx-auto flex ${axis === 'x' ? 'flex-row gap-12' : 'flex-col w-80'}`} onSubmit={onSubmit}>
+        <form className={`mx-auto flex ${axis === 'x' ? 'flex-row gap-12' : 'flex-col w-80'}`} onSubmit={onSubmit} role='form'>
           <div>
             <h2 className="text-4xl font-bold text-secondary uppercase text-center mb-2">{title}</h2>
             <p className="text-primary/70 capitalize text-sm">{subtext}</p>
