@@ -1,12 +1,15 @@
-export const SelectBox = ({ options, label, errors }) => {
+export const SelectBox = ({ options, label, errors, value, onChange, onBlur }) => {
   return (
     <div>
       <select
-        defaultValue='label'
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        defaultValue="label"
         className={`border-r-8 border-transparent outline outline-1 px-2.5 py-2.5 rounded-lg w-full capitalize 
         ${errors ? 'text-red-500 outline-red-500' : 'text-secondary outline-secondary'} text-sm`}
         id="userType" name="userType">
-        <option value='label' disabled hidden>{label}</option>
+        <option value="label" disabled hidden>{label}</option>
         {options.map(option => (
           <option key={option} value={option}>{option}</option>
         ))}

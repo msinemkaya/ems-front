@@ -17,7 +17,7 @@ export const Register = () => {
 
   return (
     <Form title="register" onSubmit={(e) => handleSubmit(e, onSubmit)}
-          subtext="start your learning journey by registering in!" axis='x'>
+          subtext="start your learning journey by registering in!" axis="x">
       <Input
         onChange={handleChange}
         onBlur={handleBlur}
@@ -44,7 +44,13 @@ export const Register = () => {
         type="passwordConfirmation"
       />
 
-      <SelectBox options={[ 'teacher', 'student' ]} label="What are you registering as?" errors={errors.userType}/>
+      <SelectBox
+        options={[ 'teacher', 'student' ]}
+        label="What are you registering as?"
+        errors={errors.userType}
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
     </Form>
   )
 }
