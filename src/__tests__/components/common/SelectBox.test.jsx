@@ -22,7 +22,7 @@ describe('SelectBox', () => {
   })
 
   it('renders select box with error message', () => {
-    render(<SelectBox label="select" options={[]} errors='error message'/>)
+    render(<SelectBox label="select" options={[]} errors="error message"/>)
 
     const selectElement = screen.getByText('error message')
     expect(selectElement).toBeInTheDocument()
@@ -32,9 +32,9 @@ describe('SelectBox', () => {
     const options = [ 'foo', 'bar' ]
 
     render(<SelectBox label="select" options={options}/>)
-    const selectElement = screen.getByRole('combobox');
-    fireEvent.change(selectElement, { target: { value: 'foo' } });
+    const selectElement = screen.getByRole('combobox')
+    fireEvent.change(selectElement, { target: { value: 'foo' } })
 
-    expect(selectElement.value).toBe('foo');
+    expect(selectElement.value).toBe('foo')
   })
 })
